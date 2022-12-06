@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./warning.component.css']
 })
 export class WarningComponent implements OnInit {
-
+  warningtext: string="Warning";
   constructor() { }
 
   ngOnInit(): void {

@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuccessComponent implements OnInit {
 
+  successtext: string="Success";
   constructor() { }
 
   ngOnInit(): void {
