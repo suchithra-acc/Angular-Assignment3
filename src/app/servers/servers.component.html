@@ -1,3 +1,7 @@
-<p>Server Name2:</p><input type="text" class="form-control"  [(ngModel)]="serverName">
+<p>Server Name2:</p><input type="text" class="form-control"  [(ngModel)]="serverName" (click)="onUpdateServerName($event)">
   <button class="btn btn-primary" [disabled]="serversallowed" (click)="onCreateserver()">Add server</button>
-  <p>{{serverStatus}}</p>
+  <p [ngStyle]="{backgroundColor:getColor()}" [ngClass]="{online:serverStatus=='online'}">{{serverStatus}}</p>
+<!--  <ng-template #noServer>
+    <p>No server yet</p>
+  </ng-template> -->
+  <app-server *ngFor="let server of servers"></app-server>

@@ -7,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
   serversallowed:boolean=false;
-  serverStatus:string="new"
+  serverStatus:string="offline";
   serverName="";
+  showServerStatus:boolean=false;
+  servers=[];
   constructor() {
     setTimeout(()=>{
      
@@ -20,11 +22,15 @@ export class ServersComponent implements OnInit {
   }
   onUpdateServerName(event:any){
        this.serverName=(<HTMLInputElement>event.target).value;
+       this.showServerStatus=false;
   }
 
  onCreateserver(){
-    this.serverStatus=this.serverName + " Server Created!!"
-    this.serversallowed=true;
+  this.servers.push(this.serverName)
+    this.serverStatus=Math.random()>0.5?"online":"offline";
+    this.showServerStatus =true;
  }
-
+ getColor(){
+  return this.serverStatus=="online"?"green":"red";
+ }
 }

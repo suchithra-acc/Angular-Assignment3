@@ -10,7 +10,7 @@ export class UserComponent implements OnInit {
   constructor() { }
   userName :string='';
   disableReset:boolean=true;
- 
+  details=[];
   ngOnInit(): void {
   }
   onUserNameupdate(){
@@ -21,4 +21,15 @@ export class UserComponent implements OnInit {
     this.userName='';
     this.disableReset=true;
   }
+  OndisplaydetailClick(){
+      var index = this.details.length+1;
+      this.details.push(index + "  Entry");
+  }
+  getbackgroundColor( i:number){
+     return (i>=4) ? "blue":"white";
+  }
+  getTextColor(i:number){
+   return i>=4?true:false;
+  }
+
 }

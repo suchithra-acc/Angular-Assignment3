@@ -1,5 +1,9 @@
-<p>Enter User Name:</p><input type="text" class="form-control"  [(ngModel)]="userName" (change)="onUserNameupdate()">
-<p>{{userName}} Welcome!!</p>
-<button class="btn btn-primary" [disabled]="disableReset" (click)="onReset()">Reset</button>
+<button class="btn btn-primary"  (click)="OndisplaydetailClick()">Display details</button>
+<div >
+        <p *ngFor="let log of details;let i = index" 
+        [ngStyle]="{backgroundColor:getbackgroundColor(i)}" 
+        [ngClass]="{changecolor:i>=4}">
+           {{log}}
 
-
+       </p>   
+ </div>
