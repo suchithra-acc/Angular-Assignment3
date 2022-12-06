@@ -1,5 +1,6 @@
 <button class="btn btn-primary"  (click)="OndisplaydetailClick()">Display details</button>
 <div >
+    <p *ngIf="showGreeting">Greetings!!</p>
         <p *ngFor="let log of details;let i = index" 
         [ngStyle]="{backgroundColor:getbackgroundColor(i)}" 
         [ngClass]="{changecolor:i>=4}">

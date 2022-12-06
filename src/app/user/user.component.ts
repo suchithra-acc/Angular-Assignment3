@@ -11,6 +11,7 @@ export class UserComponent implements OnInit {
   userName :string='';
   disableReset:boolean=true;
   details=[];
+  showGreeting :boolean=true;
   ngOnInit(): void {
   }
   onUserNameupdate(){
@@ -22,6 +23,7 @@ export class UserComponent implements OnInit {
     this.disableReset=true;
   }
   OndisplaydetailClick(){
+    this.showGreeting=this.showGreeting?false:true;
       var index = this.details.length+1;
       this.details.push(index + "  Entry");
   }
